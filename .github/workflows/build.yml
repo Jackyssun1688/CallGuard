@@ -2,7 +2,7 @@ name: Build CallGuard APK
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
     tags: ["v*"]
   workflow_dispatch:
 
@@ -23,8 +23,10 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Setup Gradle
+      - name: Setup Gradle 8.5
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 8.5
 
       - name: Build debug APK
         run: gradle assembleDebug
