@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">来电卫士 CallGuard</string>
+    <string name="screening_enabled">智能接听已开启</string>
+    <string name="screening_disabled">智能接听已关闭</string>
+    <string name="btn_enable">开启防护</string>
+    <string name="btn_disable">关闭防护</string>
+    <string name="label_settings">设置</string>
+    <string name="label_call_log">通话记录</string>
+    <string name="label_transcript">转文字稿</string>
+    <string name="label_missed">已过滤</string>
+    <string name="label_spam_spam">骚扰电话</string>
+    <string name="label_spam_loan">贷款推销</string>
+    <string name="label_spam_scam">诈骗电话</string>
+    <string name="label_spam_auto">自动语音</string>
+    <string name="label_spam_other">其他骚扰</string>
+    <string name="label_safe">安全通话</string>
+    <string name="sms_transcript_heading">📞 来电卫士 · 未能接听的通话记录</string>
+    <string name="pref_send_sms">通话后发送摘要短信</string>
+    <string name="pref_send_sms_summary">筛选完成后，将文字稿发送到本机号码备份</string>
+    <string name="pref_auto_answer">自动接听陌生来电</string>
+    <string name="pref_auto_answer_summary">开启后App将自动接听陌生号码并分析内容</string>
+    <string name="pref_white_list">白名单联系人</string>
+    <string name="pref_white_list_summary">白名单内的来电不会被拦截</string>
+    <string name="no_call_logs">暂无通话记录</string>
+    <string name="permission_required">需要授予相关权限才能正常工作</string>
+    <string name="permission_phone">电话权限</string>
+    <string name="permission_audio">录音权限</string>
+    <string name="permission_accessibility">无障碍服务</string>
+    <string name="permission_notification">通知权限</string>
+    <string name="permission_sms">短信权限</string>
+    <string name="label_call_duration">通话时长</string>
+    <string name="label_detected_as">判断结果</string>
+    <string name="btn_grant_permissions">授予权限</string>
+    <string name="label_app_description">自动接听陌生来电 → 分析内容 → 骚扰自动挂断 → 安全通话通知你</string>
+</resources>
