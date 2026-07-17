@@ -149,7 +149,7 @@ class AlertManager(private val context: Context) {
             appendLine("判断: $categoryLabel")
             appendLine("━━━━━━━━━━━━━━━━")
             appendLine("对方讲话内容:")
-            appendLine(transcript.ifEmpty { "（无录音内容）"))
+            appendLine(transcript.ifEmpty { "（无录音内容）" })
         }
 
         try {
