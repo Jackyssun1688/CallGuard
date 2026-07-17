@@ -9,6 +9,7 @@ import android.os.Vibrator
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
+import androidx.preference.PreferenceManager
 import com.callguard.App
 import com.callguard.audio.CallAudioForegroundService
 import com.callguard.audio.CallAudioRecorder
@@ -21,7 +22,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-
 /**
  * 无障碍服务 — 自动接听 / 自动挂断。
  *
@@ -108,13 +108,12 @@ class CallAccessibilityService : AccessibilityService() {
                         hasAnswered = true
                         Log.d(TAG, "Found answer button, auto-answering...")
                         answerButton.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-                        delay(1000) // 等待接听完成
-
-                        // 打开扬声器
-                        enableSpeakerphone(rootNode)
-
-                        // 开始音频处理
+                        // 异步等待 + 处理音频
                         scope.launch {
+                            delay(1000) // 等待接听完成
+                            // 打开扬声器
+                            enableSpeakerphone(rootNode)
+                            // 开始音频处理
                             processAudio()
                         }
                     }

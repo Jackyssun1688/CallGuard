@@ -65,7 +65,8 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-    // RecyclerView (for call history)
+    // Preference (for settings)
+    implementation("androidx.preference:preference-ktx:1.2.1")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 
     // SwipeRefreshLayout

@@ -112,9 +112,9 @@ class CallAudioRecorder(private val context: Context) {
                             buffer.copyInto(bytes, 0, 0, toWrite)
                             val byteBuf = ByteArray(toWrite * 2)
                             for (i in bytes.indices) {
-                                val s = bytes[i]
-                                byteBuf[i * 2] = (s and 0xFF).toByte()
-                                byteBuf[i * 2 + 1] = ((s shr 8) and 0xFF).toByte()
+                                val si = bytes[i].toInt() // Short → Int for bitwise ops
+                                byteBuf[i * 2] = (si and 0xFF).toByte()
+                                byteBuf[i * 2 + 1] = ((si shr 8) and 0xFF).toByte()
                             }
                             fos.write(byteBuf)
                             samplesRead += toWrite

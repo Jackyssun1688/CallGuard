@@ -66,7 +66,7 @@ class SpeechToTextEngine(private val context: Context) {
 
                 // Android 33+ 支持传入音频 URI
                 if (Build.VERSION.SDK_INT >= 33) {
-                    putExtra(RecognizerIntent.EXTRA_AUDIO, audioFile.toURI())
+                    putExtra("android.speech.extra.AUDIO", audioFile.toURI())
                 }
             }
 

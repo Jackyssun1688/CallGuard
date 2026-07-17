@@ -107,9 +107,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeData() {
         // 监听数据库变化
-        App.get().repository.allLogs.observe(this) { logs ->
-            callLogAdapter.submitList(logs)
-            binding.textEmpty.visibility = if (logs.isEmpty()) android.view.View.VISIBLE else android.view.View.GONE
+        lifecycleScope.launch {
+            App.get().repository.allLogs.collect { logs ->
+                callLogAdapter.submitList(logs)
+                binding.textEmpty.visibility = if (logs.isEmpty()) android.view.View.VISIBLE else android.view.View.GONE
+            }
         }
     }
 

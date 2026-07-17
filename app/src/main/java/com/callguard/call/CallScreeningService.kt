@@ -1,6 +1,5 @@
 package com.callguard.call
 
-import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import android.telecom.Call
