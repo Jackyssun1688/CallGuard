@@ -153,7 +153,7 @@ class AlertManager(private val context: Context) {
         }
 
         try {
-            val smsManager = context.getSystemService(Context.SMS_SERVICE) as SmsManager
+            val smsManager = context.getSystemService("sms") as SmsManager
             smsManager.sendTextMessage(phoneNumber, null, message, null, null)
             Log.d(TAG, "SMS sent to $phoneNumber")
         } catch (e: Exception) {
